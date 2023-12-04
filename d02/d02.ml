@@ -67,6 +67,7 @@ let min_cubeset { cubesets; _ } =
   | cubeset :: cubesets -> List.fold_left Cubeset.max cubeset cubesets
   | [] -> assert false
 
+(* 54699 *)
 let part2 () =
   Lib.fold_file_lines "input"
     (fun sum line -> sum + Cubeset.power (min_cubeset (game_of_string line)))
